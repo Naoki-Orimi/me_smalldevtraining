@@ -19,3 +19,13 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/tasks/index', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks.index');
 Route::get('/tasks/create', [App\Http\Controllers\TaskController::class, 'create'])->name('tasks.create');
 Route::post('/tasks', [App\Http\Controllers\TaskController::class, 'store'])->name('tasks.store');
+
+// プロジェクト関連のルート（将来の機能）
+Route::get('/projects', function () {
+    return redirect()->route('home')->with('info', '次のアップデートをお待ちください');
+})->name('projects.index');
+
+// チーム関連のルート（将来の機能）
+Route::get('/teams', function () {
+    return redirect()->route('home')->with('info', '次のアップデートをお待ちください');
+})->name('teams.index');
