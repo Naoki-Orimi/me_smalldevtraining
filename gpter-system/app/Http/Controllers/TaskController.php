@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\User;
+use App\Http\Requests\TaskStoreRequest;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -46,5 +48,62 @@ class TaskController extends Controller
         ];
 
         return view('tasks.index', compact('tasksByStatus', 'statusInfo'));
+    }
+
+    /**
+     * タスク作成フォームを表示
+     */
+    public function create()
+    {
+        // ユーザー一覧を取得（担当者選択用）
+        $users = User::whereNull('deleted_at')->get();
+        
+        // ステータス選択肢
+        $statusOptions = [
+            Task::STATUS_NOT_STARTED => '未着手',
+            Task::STATUS_IN_PROGRESS => '進行中',
+            Task::STATUS_ON_HOLD => '保留',
+            Task::STATUS_COMPLETED => '完了',
+        ];
+
+        // 優先度選択肢
+        $priorityOptions = [
+            Task::PRIORITY_LOW => '低',
+            Task::PRIORITY_MEDIUM => '中',
+            Task::PRIORITY_HIGH => '高',
+        ];
+
+        // 進捗率選択肢
+        $progressOptions = [
+            Task::PROGRESS_0 => '0%',
+            Task::PROGRESS_25 => '25%',
+            Task::PROGRESS_50 => '50%',
+            Task::PROGRESS_75 => '75%',
+            Task::PROGRESS_100 => '100%',
+        ];
+
+        return view('tasks.create', compact('users', 'statusOptions', 'priorityOptions', 'progressOptions'));
+    }
+
+    /**
+     * 新しいタスクを保存
+     */
+    public function store(TaskStoreRequest $request)
+    {
+        try {
+            // バリデーション済みのデータを取得
+            $validatedData = $request->validated();
+            
+            // タスクを作成（Model領域で処理）
+            $task = Task::create($validatedData);
+
+            return redirect()->route('tasks.index')
+                ->with('success', 'タスクが正常に作成されました。');
+
+        } catch (\Exception $e) {
+            return back()
+                ->withInput()
+                ->with('error', 'タスクの作成中にエラーが発生しました。');
+        }
     }
 }

@@ -180,12 +180,12 @@
                         <h3 class="mt-2 text-sm font-medium text-gray-900">タスクがありません</h3>
                         <p class="mt-1 text-sm text-gray-500">新しいタスクを作成して始めましょう。</p>
                         <div class="mt-6">
-                            <button class="btn-primary">
-                                <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                </svg>
-                                タスクを作成
-                            </button>
+                        <a href="{{ route('tasks.create') }}" class="btn-primary">
+                            <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                            タスクを作成
+                        </a>
                         </div>
                     </div>
                 @endif
@@ -198,12 +198,12 @@
             <div class="card">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">クイックアクション</h3>
                 <div class="space-y-3">
-                    <button class="w-full btn-primary text-left">
+                    <a href="{{ route('tasks.create') }}" class="w-full btn-primary text-left">
                         <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                         新しいタスク
-                    </button>
+                    </a>
                     <button class="w-full btn-secondary text-left">
                         <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>

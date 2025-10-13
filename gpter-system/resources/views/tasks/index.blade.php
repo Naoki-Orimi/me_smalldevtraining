@@ -12,12 +12,12 @@
                 <p class="text-gray-600">ステータス別にタスクを管理できます。</p>
             </div>
             <div class="flex space-x-3">
-                <button class="btn-primary">
+                <a href="{{ route('tasks.create') }}" class="btn-primary">
                     <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                     </svg>
                     新しいタスク
-                </button>
+                </a>
                 <a href="{{ route('home') }}" class="btn-secondary">
                     <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
@@ -181,12 +181,12 @@
 
                 <!-- カラムフッター -->
                 <div class="mt-4 pt-3 border-t border-gray-200">
-                    <button class="w-full text-sm text-gray-500 hover:text-gray-700 py-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <a href="{{ route('tasks.create') }}" class="w-full text-sm text-gray-500 hover:text-gray-700 py-2 rounded-lg hover:bg-gray-100 transition-colors block text-center">
                         <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                         タスクを追加
-                    </button>
+                    </a>
                 </div>
             </div>
         @endforeach
