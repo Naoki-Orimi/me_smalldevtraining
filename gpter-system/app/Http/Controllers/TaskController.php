@@ -130,7 +130,22 @@ class TaskController extends Controller
             // タスク情報を取得（Model領域で処理）
             $task = Task::getTaskForModal($id);
             
-            return response()->json($task);
+            // フォーマット済みの日付を含むレスポンス
+            return response()->json([
+                'id' => $task->id,
+                'title' => $task->title,
+                'description' => $task->description,
+                'status' => $task->status,
+                'due_date' => $task->formatted_due_date,
+                'priority' => $task->priority,
+                'assignee_ids' => $task->assignee_ids,
+                'creator_id' => $task->creator_id,
+                'creator' => $task->creator,
+                'progress' => $task->progress,
+                'attachment_url' => $task->attachment_url,
+                'created_at' => $task->formatted_created_at,
+                'updated_at' => $task->formatted_updated_at,
+            ]);
         } catch (\Exception $e) {
             return response()->json(['error' => 'タスクが見つかりません'], 404);
         }

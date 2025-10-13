@@ -82,6 +82,21 @@ class Task extends Model
         };
     }
 
+    public function getFormattedDueDateAttribute()
+    {
+        return $this->due_date ? $this->due_date->format('Y/m/d H:i') : null;
+    }
+
+    public function getFormattedCreatedAtAttribute()
+    {
+        return $this->created_at->format('Y/m/d H:i');
+    }
+
+    public function getFormattedUpdatedAtAttribute()
+    {
+        return $this->updated_at->format('Y/m/d H:i');
+    }
+
     // スコープメソッド
     public function scopeActive($query)
     {

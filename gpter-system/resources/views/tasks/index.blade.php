@@ -206,8 +206,8 @@
                         <span id="modalProgress" class="ml-1 font-medium"></span>
                     </div>
                     <div id="modalDueDate" class="hidden">
-                        <span class="text-gray-500">期日:</span>
-                        <span class="ml-1 font-medium"></span>
+                        <span class="text-gray-800 font-bold">期日:</span>
+                        <span class="ml-1 font-bold text-gray-800"></span>
                     </div>
                     <div>
                         <span class="text-gray-500">作成日:</span>
@@ -334,7 +334,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 // 期日
                 const dueDateElement = document.getElementById('modalDueDate');
                 if (task.due_date) {
-                    dueDateElement.querySelector('span').textContent = task.due_date;
+                    const dueDate = new Date(task.due_date);
+                    const now = new Date();
+                    const isOverdue = dueDate < now;
+                    
+                    // 期限切れの場合は赤色、そうでなければ黒色
+                    if (isOverdue) {
+                        dueDateElement.querySelector('span:first-child').className = 'text-red-600 font-bold';
+                        dueDateElement.querySelector('span:last-child').className = 'ml-1 font-bold text-red-600';
+                    } else {
+                        dueDateElement.querySelector('span:first-child').className = 'text-gray-800 font-bold';
+                        dueDateElement.querySelector('span:last-child').className = 'ml-1 font-bold text-gray-800';
+                    }
+                    
+                    dueDateElement.querySelector('span:last-child').textContent = task.due_date;
                     dueDateElement.classList.remove('hidden');
                 } else {
                     dueDateElement.classList.add('hidden');
