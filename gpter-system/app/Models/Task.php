@@ -114,6 +114,15 @@ class Task extends Model
             ->get();
     }
 
+    public static function getRecentTasks($limit = 5)
+    {
+        return self::active()
+            ->with('creator')
+            ->orderBy('created_at', 'desc')
+            ->limit($limit)
+            ->get();
+    }
+
     public static function getTasksByStatus($status)
     {
         return self::active()

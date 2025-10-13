@@ -23,7 +23,7 @@
                 </div>
                 <div class="ml-4">
                     <p class="text-sm font-medium text-gray-500">総タスク数</p>
-                    <p class="text-2xl font-semibold text-gray-900">{{ $tasks->count() }}</p>
+                    <p class="text-2xl font-semibold text-gray-900">{{ $totalTasks }}</p>
                 </div>
             </div>
         </div>
@@ -87,10 +87,10 @@
                     <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">すべて表示</a>
                 </div>
                 
-                @if($tasks->count() > 0)
+                @if($recentTasks->count() > 0)
                     <!-- タスク一覧 -->
                     <div class="space-y-4">
-                        @foreach($tasks as $task)
+                        @foreach($recentTasks as $task)
                             <div class="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors">
                                 <div class="flex items-start justify-between">
                                     <div class="flex-1">
