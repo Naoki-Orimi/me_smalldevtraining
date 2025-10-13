@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// タスク関連のルート
+Route::get('/tasks/index', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks.index');

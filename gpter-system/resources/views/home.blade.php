@@ -84,7 +84,7 @@
             <div class="card">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-lg font-semibold text-gray-900">最近のタスク</h3>
-                    <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">すべて表示</a>
+                    <a href="{{ route('tasks.index') }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium">すべて表示</a>
                 </div>
                 
                 @if($recentTasks->count() > 0)
