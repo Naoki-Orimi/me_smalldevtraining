@@ -19,6 +19,10 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/tasks/index', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks.index');
 Route::get('/tasks/create', [App\Http\Controllers\TaskController::class, 'create'])->name('tasks.create');
 Route::post('/tasks', [App\Http\Controllers\TaskController::class, 'store'])->name('tasks.store');
+Route::get('/tasks/detail/{id}', [App\Http\Controllers\TaskController::class, 'show'])->name('tasks.show');
+
+// タスクAPI（モーダル用）
+Route::get('/api/tasks/{id}', [App\Http\Controllers\TaskController::class, 'apiShow']);
 
 // プロジェクト関連のルート（将来の機能）
 Route::get('/projects', function () {

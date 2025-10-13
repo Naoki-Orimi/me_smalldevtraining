@@ -142,4 +142,29 @@ class Task extends Model
             ->orderBy('due_date', 'asc')
             ->get();
     }
+
+    /**
+     * タスク詳細を取得
+     */
+    public static function getTaskDetail($id)
+    {
+        return self::active()
+            ->with('creator')
+            ->findOrFail($id);
+    }
+
+    /**
+     * タスクの基本情報を取得（モーダル用）
+     */
+    public static function getTaskForModal($id)
+    {
+        return self::active()
+            ->with('creator')
+            ->select([
+                'id', 'title', 'description', 'status', 'due_date', 
+                'priority', 'assignee_ids', 'creator_id', 'progress', 
+                'attachment_url', 'created_at', 'updated_at'
+            ])
+            ->findOrFail($id);
+    }
 }

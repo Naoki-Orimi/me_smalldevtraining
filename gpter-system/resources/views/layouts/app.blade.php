@@ -116,7 +116,12 @@
         </div>
     </footer>
 
+    <!-- Vue.js CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
     <!-- JavaScript -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
     <script>
         // 基本的なJavaScript機能
         document.addEventListener('DOMContentLoaded', function() {
