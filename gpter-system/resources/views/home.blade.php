@@ -11,9 +11,10 @@
     </div>
 
     <!-- 統計カード -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div class="card">
-            <div class="flex items-center">
+    <div class="row g-3 mb-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="card-custom bg-white rounded-lg p-4">
+                <div class="d-flex align-items-center">
                 <div class="flex-shrink-0">
                     <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                         <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -28,7 +29,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card-custom">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
                     <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
@@ -44,7 +45,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card-custom">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
                     <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
@@ -60,7 +61,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card-custom">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
                     <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
@@ -81,7 +82,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- 最近のタスク -->
         <div class="lg:col-span-2">
-            <div class="card">
+            <div class="card-custom">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-lg font-semibold text-gray-900">最近のタスク</h3>
                     <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">すべて表示</a>
@@ -95,7 +96,7 @@
                     <h3 class="mt-2 text-sm font-medium text-gray-900">タスクがありません</h3>
                     <p class="mt-1 text-sm text-gray-500">新しいタスクを作成して始めましょう。</p>
                     <div class="mt-6">
-                        <button class="btn-primary">
+                        <button class="btn btn-custom-primary">
                             <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
@@ -109,22 +110,22 @@
         <!-- サイドバー -->
         <div class="space-y-6">
             <!-- クイックアクション -->
-            <div class="card">
+            <div class="card-custom">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">クイックアクション</h3>
                 <div class="space-y-3">
-                    <button class="w-full btn-primary text-left">
+                    <button class="w-full btn btn-custom-primary text-left">
                         <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                         新しいタスク
                     </button>
-                    <button class="w-full btn-secondary text-left">
+                    <button class="w-full btn btn-custom-secondary text-left">
                         <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                         チーム管理
                     </button>
-                    <button class="w-full btn-secondary text-left">
+                    <button class="w-full btn btn-custom-secondary text-left">
                         <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
@@ -134,7 +135,7 @@
             </div>
 
             <!-- 期限が近いタスク -->
-            <div class="card">
+            <div class="card-custom">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">期限が近いタスク</h3>
                 <div class="text-center py-8">
                     <svg class="mx-auto h-8 w-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +146,7 @@
             </div>
 
             <!-- システム情報 -->
-            <div class="card">
+            <div class="card-custom">
                 <h3 class="text-lg font-semibold text-gray-900 mb-4">システム情報</h3>
                 <div class="space-y-2 text-sm text-gray-600">
                     <div class="flex justify-between">
