@@ -4,6 +4,9 @@
 
 @section('content')
 <div class="px-4 sm:px-0">
+    <!-- セッションアラート -->
+    <x-session-alerts />
+    
     <!-- ヘッダー -->
     <div class="mb-8">
         <div class="flex items-center justify-between">

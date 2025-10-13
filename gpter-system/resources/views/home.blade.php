@@ -4,6 +4,9 @@
 
 @section('content')
 <div class="px-4 sm:px-0">
+    <!-- セッションアラート -->
+    <x-session-alerts />
+    
     <!-- ウェルカムセクション -->
     <div class="mb-8">
         <h2 class="text-2xl font-bold text-gray-900 mb-2">ダッシュボード</h2>
