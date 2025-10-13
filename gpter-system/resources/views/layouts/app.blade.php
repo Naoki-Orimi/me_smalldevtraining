@@ -7,8 +7,67 @@
     <title>@yield('title', 'タスク管理システム')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <!-- Vite CSS -->
-    @vite(['resources/css/app.css'])
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- カスタムスタイル -->
+    <style>
+        :root {
+            --primary-color: #2563EB;
+            --primary-dark: #1D4ED8;
+            --accent-color: #E5E7EB;
+            --accent-light: #BFDBFE;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background-color: var(--accent-color);
+            color: #374151;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #D1D5DB;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+        }
+        
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .status-not-started { background-color: #F3F4F6; color: #374151; }
+        .status-in-progress { background-color: #DBEAFE; color: #1D4ED8; }
+        .status-on-hold { background-color: #FEF3C7; color: #D97706; }
+        .status-completed { background-color: #D1FAE5; color: #059669; }
+        
+        .priority-low { color: #6B7280; }
+        .priority-medium { color: #F59E0B; }
+        .priority-high { color: #EF4444; }
+    </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- ヘッダー -->
@@ -57,7 +116,13 @@
         </div>
     </footer>
 
-    <!-- Vite JavaScript -->
-    @vite(['resources/js/app.js'])
+    <!-- JavaScript -->
+    <script>
+        // 基本的なJavaScript機能
+        document.addEventListener('DOMContentLoaded', function() {
+            // モバイルメニューのトグル（将来実装）
+            // 通知の表示（将来実装）
+        });
+    </script>
 </body>
 </html>
