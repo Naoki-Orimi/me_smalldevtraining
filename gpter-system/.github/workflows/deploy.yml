@@ -22,6 +22,10 @@ jobs:
         script: |
           cd /var/www/me_smalldevtraining/gpter-system
           git pull origin main
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          npm install
+          npm run build
           composer install --no-dev --optimize-autoloader
           php artisan config:clear
           php artisan cache:clear
