@@ -82,9 +82,9 @@
                 <!-- ナビゲーション -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="{{ route('home') }}" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">ダッシュボード</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">タスク一覧</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">プロジェクト</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">チーム</a>
+                    <a href="{{ route('tasks.index') }}" class="text-gray-500 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">タスク一覧</a>
+                    <a href="{{ route('projects.index') }}" class="text-gray-500 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">プロジェクト</a>
+                    <a href="{{ route('teams.index') }}" class="text-gray-500 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">チーム</a>
                 </nav>
                 
                 <!-- ユーザーメニュー -->
@@ -116,7 +116,12 @@
         </div>
     </footer>
 
+    <!-- Vue.js CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
     <!-- JavaScript -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
     <script>
         // 基本的なJavaScript機能
         document.addEventListener('DOMContentLoaded', function() {
