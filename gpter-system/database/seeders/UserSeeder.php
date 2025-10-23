@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         // 既存のユーザーをクリア（開発環境用）
-        User::truncate();
+        // User::truncate(); // 外部キー制約があるためコメントアウト
 
         // 管理者ユーザー（社長）
         User::create([
